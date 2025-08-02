@@ -4,9 +4,7 @@
 
 Basic real-time Analog clock built with **HTML, CSS and JS** to improve my front-end development skills.
 
-⚡️ **Download the latest version** in this  `.zip` !
-
-< download link to latest version >
+⚡️ **Download the latest version** in this  [`.zip`](analogClock.zip) !
 
 >🤠 **No major updates or features** are planned for now — only small improvements might be committed from time to time.
 
