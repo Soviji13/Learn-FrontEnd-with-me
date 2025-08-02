@@ -1,0 +1,159 @@
+/* Reset básico de estilos, buena práctica ✔︎ */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;              /* Ocupa todo el largo de la ventana */
+    display: flex;              /* Flex-Box hijos */
+    justify-content: center;    /* Alineación central en el eje X de sus hijos (no nietos) */
+    align-items: center;        /* Alineación central en el eje Y de sus hijos (no nietos) */
+    background: #ddd;         /* Estilo del fondo */
+}
+
+/* Punto central del reloj */
+.clock::before
+{
+    content: '';
+
+    /* Dimensiones */
+    width: 10px;
+    height: 10px;
+
+    /* Diseño visual */
+    background: rgb(68, 67, 67);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+
+    /* Posicionamiento */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 1;
+}
+
+/* Esfera del reloj */
+.clock
+{
+    /* ----- Responsive Design de la esfera ----- */
+
+    /* min (400px, 80vh) 
+        Siempre medirá 400px, a no ser que el largo de la ventana sea menor a 400px, que en ese caso, ocuparemos
+        el 80% del largo para que se ajuste a esa resolución
+    */
+
+    /* min (45vw, 600px, 80vh)
+        Siempre medirá el 45% del ancho, a no ser que este exceda los 600px, en ese caso medirá 600px.
+        En el caso de que el 80% del largo de la ventana sea menor al 45% del ancho de la ventana, se
+        ajustará al 80% del largo de la ventana
+    */
+
+    /* Conclusión: como mucho 600 píxeles y como mínimo 250px */
+
+    min-width: max(
+        max(250px, min(80vh, 400px)), 
+        min(400px, 80vh), 
+        min(45vw, 600px, 80vh));   /* Ancho de esfera ajustable - Responsive Design */
+
+    aspect-ratio: 1/1;                                          /* Largo esfera -> Lo mismo que el ancho (se ajusta para que siempre sea una esfera) */
+    border-radius: 50%;                                         /* Convertimos en esfera la caja */
+
+    container-type: inline-size;
+    /* ---- Diseño ---- */
+    background: radial-gradient(circle, #ececec 80%, #b4b3b3 95%);  /* Gradiente de la esfera - interior */
+    box-shadow: 0 0 30px rgba(0,  0, 0, 0.1);                          /* Sombra que genera la esfera - exterior */
+
+    position: relative;     /* Su posición será respectiva a su posición natural - Los hijos se posicionarán respecto a clock */
+}
+
+/* Estilo de los números */
+.number
+{
+    /* Hay varias opciones para hacer responsive-design del texto, en este caso me decanto por la primera opción (más recomendable) 
+        por temas de accesibilidad */
+
+    font-size: clamp(1.25rem, 1vmax + 1rem, 2rem);        /* Opción 1: clamp(tamaño mínimo, tamaño ideal, tamaño máximo) 
+                                                                        1 rem -> unidado por defecto en html === 16 px*/
+
+    /*font-size: 7cqw;                                  Opción 2: container-querys, en otros proyectos lo explicaré más a fondo */
+    font-weight: 100;
+    font-family:'Times New Roman', Times, serif;
+}
+
+/* TAMAÑO DE LOS CONTENEDORES DE LAS AGUJAS */
+
+.hr 
+{
+    width: 55%;
+    aspect-ratio: 1/1;
+}
+
+.min
+{
+    width: 65%;
+    aspect-ratio: 1/1;
+}
+
+.sec 
+{
+    width: 75%;
+    aspect-ratio: 1/1;
+}
+
+/* Cómo se comporta el contenedor de las agujas */
+.hr,
+.min,
+.sec
+{
+    /* Se encontrarán en el centro de la esfera del reloj */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    /* Las agujas físicamente se encontrarán en el centro del eje X del contenedor */
+    display: flex;
+    justify-content: center;
+
+    /* Para ajustar su alineación central y su rotación, se hace desde JS */
+
+}
+
+/* Diseño visual de las agujas */
+.hr::before
+{
+    content: '';    /* Necesario para poder visualizarse */                      
+
+    width: 6px;     /* Grosor */
+    height: 50%;    /* Para que lleguen al centro exactamente - Se adaptan al tamaño */
+
+    /* Diseño decorativo */
+    background: rgb(68, 67, 67);
+    border-radius: 10px;
+}
+
+.min::before
+{
+    content: '';
+    position: absolute;
+    
+    width: 4px;
+    height: 50%;
+
+    border-radius: 50% 50% 0 0;
+    background: rgb(132, 132, 132);
+}
+
+.sec::before
+{
+    content: '';
+    position: absolute;
+
+    width: 2px;
+    height: 50%;
+
+    background: rgb(177, 177, 177);
+}

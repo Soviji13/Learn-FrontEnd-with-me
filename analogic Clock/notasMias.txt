@@ -1,0 +1,56 @@
+.hour, .minute, .second (PADRES)
+=======================================================================
+    Estas clases actúan como el centro de rotación del reloj.
+    Se posiciona en el centro exacto del reloj.
+    No tienen movimiento.
+
+.hr, .min, .sec (HIJOS)
+=======================================================================
+    Estos son los elementos rotativos, la manecilla visual.
+    Rotan alrededor de sus padres respectivamente.
+
+
+###CSS###################################################################
+
+ID vs class 
+=======================================================================
+    Clase: Para los estilos CSS 
+
+    ID: Para JS
+
+Clamp (mínimo, ideal, máximo)
+=======================================================================
+    Mínimo deseado del objeto (valor fijo)
+
+    El ideal (normalmente una proporción)
+
+    Máximo deseado del objeto (valor fijo)
+
+cqw
+=======================================================================
+
+xcwq -> x% del ancho del contenedor padre
+
+Responsive Design de Ítems de un contenedor - Container Query
+============================================================================================
+
+    .contenedor
+    {
+        container-type: inline-size; (size si queremos controlar el ancho y el alto)
+        container-name: nombre;
+    }
+
+    @container nombre (condicion) and/or (otra condición si queremos)
+    {
+        Lo que ocurre con sus hijos
+    }
+
+###JS##################################################################
+
+    number.style.position = 'absolute';
+    number.style.left = `${x}px`;
+    number.style.top = `${y}px`;
+    number.style.transform = 'translate(-50%, -50%)';
+
+    Se usa normalmente cuando se colocan elementos en coordenadas
+    calculadas con JS.
