@@ -16,10 +16,14 @@ Each project is **well-documented** in its own folder with notes and explanation
 
 > Small and focused exercises, perfect for beginners.
 
-- [Analog Clock 🕒](./analog-clock)  
-  A simple HTML/CSS/JS analog clock.  
-  👉 [Live Preview](https://soviji13.github.io/Learn-FrontEnd-with-me/analog-clock/)  
-  📄 [README](./analog-clock/README.md)
+- [Analog Clock](./analog-clock) 🕒 
+  A simple HTML/CSS/JS analog clock
+  - Flex-box model, flow modification, pseudo-elements, z-index... 
+  
+  🖥️ [Live Preview](https://soviji13.github.io/Learn-FrontEnd-with-me/analog-clock/)  
+  📦 [zip file](https://github.com/Soviji13/Learn-FrontEnd-with-me/raw/refs/heads/main/analog-clock/analogClock.zip)
+
+
 
 ---
 
