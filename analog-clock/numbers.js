@@ -31,8 +31,8 @@ function posicionarNumeros()
                          // Contenido del div es i
 
         // número -> centro del reloj + radio - su propia altura (para que si alguien quiere poner los números más grandes siempre encajen)
-        const x = centerX + (radius - 1.2 * number.clientHeight) * Math.cos(angle);   
-        const y = centerY + (radius - 1.2 * number.clientHeight) * Math.sin(angle);
+        const x = centerX + (radius * 0.85) * Math.cos(angle);   
+        const y = centerY + (radius * 0.85) * Math.sin(angle);
 
         // Mostrar altura por consola
         //console.log(`Número ${i}: altura = ${number.clientHeight}px`);

@@ -60,10 +60,12 @@ body{
     /* Hay varias opciones para hacer responsive-design del texto, en este caso me decanto por la primera opción (más recomendable) 
         por temas de accesibilidad */
 
-          /* Opción 1: clamp(tamaño mínimo, tamaño ideal, tamaño máximo) 
-                                                                        1 rem -> unidado por defecto en html === 16 px*/
+    /* Opción 1: clamp(tamaño mínimo, tamaño ideal, tamaño máximo) */
+    font-size: clamp(1.25rem, 1vmax + 1rem, 2rem);      /* 1 rem -> unidado por defecto en html === 16 px*/
 
-    /*font-size: 7cqw;                                  Opción 2: container-querys, en otros proyectos lo explicaré más a fondo */
+    /* Opción 2: container-querys, en otros proyectos lo explicaré más a fondo 
+    font-size: 7cqw; */
+    
     font-weight: 100;
     font-family:'Times New Roman', Times, serif;
 }
