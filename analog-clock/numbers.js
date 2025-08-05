@@ -21,22 +21,28 @@ function posicionarNumeros()
         // Cálculo del ángulo que se debería formar entre el número y el origen
         const angle = (i-3) * (Math.PI * 2) / 12;
 
-        // número -> centro del reloj + radio - 30px (para darle margen) * posición matemáticamente de donde debería estar
-        const x = centerX + (radius * 0.85) * Math.cos(angle);   
-        const y = centerY + (radius * 0.85) * Math.sin(angle);
-
         // Creación visual del número
         const number = document.createElement('div');       // Creamos un div
         number.classList.add('number');                     // Le ponemos la clase number al div (podremos modificarlo así en css)
-        number.textContent = i;                             // Contenido del div es i
+        number.textContent = i;  
+        number.style.fontSize = `clamp(1.25rem, 1vmax + 1rem, 2rem)`;    
+
+        clock.appendChild(number);
+                         // Contenido del div es i
+
+        // número -> centro del reloj + radio - su propia altura (para que si alguien quiere poner los números más grandes siempre encajen)
+        const x = centerX + (radius - 1.2 * number.clientHeight) * Math.cos(angle);   
+        const y = centerY + (radius - 1.2 * number.clientHeight) * Math.sin(angle);
+
+        // Mostrar altura por consola
+        //console.log(`Número ${i}: altura = ${number.clientHeight}px`);
+
 
         // Posicionamiento del número 
         number.style.position = 'absolute';
         number.style.left = `${x}px`;
         number.style.top = `${y}px`;
         number.style.transform = 'translate(-50%, -50%)';
-
-        clock.appendChild(number);
     }
 }
 

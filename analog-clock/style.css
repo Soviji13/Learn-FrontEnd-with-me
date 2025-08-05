@@ -54,10 +54,12 @@ body{
 
     /* Conclusión: como mucho 600 píxeles y como mínimo 250px */
 
-    min-width: max(
+    /*min-width: max(
         max(250px, min(80vh, 400px)), 
         min(400px, 80vh), 
         min(45vw, 600px, 80vh));   /* Ancho de esfera ajustable - Responsive Design */
+
+    width: clamp(200px, 80vmin, 600px);
 
     aspect-ratio: 1/1;                                          /* Largo esfera -> Lo mismo que el ancho (se ajusta para que siempre sea una esfera) */
     border-radius: 50%;                                         /* Convertimos en esfera la caja */
