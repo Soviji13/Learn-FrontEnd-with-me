@@ -41,24 +41,6 @@ body{
 {
     /* ----- Responsive Design de la esfera ----- */
 
-    /* min (400px, 80vh) 
-        Siempre medirá 400px, a no ser que el largo de la ventana sea menor a 400px, que en ese caso, ocuparemos
-        el 80% del largo para que se ajuste a esa resolución
-    */
-
-    /* min (45vw, 600px, 80vh)
-        Siempre medirá el 45% del ancho, a no ser que este exceda los 600px, en ese caso medirá 600px.
-        En el caso de que el 80% del largo de la ventana sea menor al 45% del ancho de la ventana, se
-        ajustará al 80% del largo de la ventana
-    */
-
-    /* Conclusión: como mucho 600 píxeles y como mínimo 250px */
-
-    /*min-width: max(
-        max(250px, min(80vh, 400px)), 
-        min(400px, 80vh), 
-        min(45vw, 600px, 80vh));   /* Ancho de esfera ajustable - Responsive Design */
-
     width: clamp(200px, 80vmin, 600px);
 
     aspect-ratio: 1/1;                                          /* Largo esfera -> Lo mismo que el ancho (se ajusta para que siempre sea una esfera) */
@@ -78,7 +60,7 @@ body{
     /* Hay varias opciones para hacer responsive-design del texto, en este caso me decanto por la primera opción (más recomendable) 
         por temas de accesibilidad */
 
-    font-size: clamp(1.25rem, 1vmax + 1rem, 2rem);        /* Opción 1: clamp(tamaño mínimo, tamaño ideal, tamaño máximo) 
+          /* Opción 1: clamp(tamaño mínimo, tamaño ideal, tamaño máximo) 
                                                                         1 rem -> unidado por defecto en html === 16 px*/
 
     /*font-size: 7cqw;                                  Opción 2: container-querys, en otros proyectos lo explicaré más a fondo */
