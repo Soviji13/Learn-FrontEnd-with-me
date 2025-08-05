@@ -44,13 +44,3 @@ posicionarNumeros();
 
 // Llamar cada vez que cambie el tamaño de ventana
 window.addEventListener('resize', posicionarNumeros);
-
-// Llamar cada ve que haya un cambio interno dentro de reloj (específicamente para la fuente en este caso )
-const clock = document.getElementById('clock');
-if (window.ResizeObserver)
-{
-    const observer = new ResizeObserver(() => {
-        posicionarNumeros();
-    })
-    observer.observe(clock);
-}
