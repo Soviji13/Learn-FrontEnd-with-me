@@ -4,6 +4,8 @@
 
 Basic real-time Analog clock built with **HTML, CSS and JS** to improve my front-end development skills.
 
+🖥️ [Live preview](https://soviji13.github.io/Learn-FrontEnd-with-me/analog-clock/) **here!**
+
 ⚡️ **Download the latest version** in this  [`.zip`](https://github.com/Soviji13/Learn-FrontEnd-with-me/raw/refs/heads/main/analog-clock/analogClock.zip) !
 
 >🤠 **No major updates or features** are planned for now — only small improvements might be committed from time to time.
@@ -77,10 +79,7 @@ Some examples:
 
 ```css
 /* In .clock - Responsive size */
-min-width: max(
-    max(250px, min(80vh, 400px)), 
-    min(400px, 80vh), 
-    min(45vw, 600px, 80vh)); 
+width: clamp(200px, 80vmin, 600px);
 ```
 ```js
 /* In numbers.js - Responsive position */

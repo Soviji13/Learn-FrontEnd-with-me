@@ -23,8 +23,9 @@ Each project is **well-documented** in its own folder with notes and explanation
 > Small and focused exercises, perfect for beginners.
 
 - [Analog Clock](./analog-clock) 🕒 
-  A simple HTML/CSS/JS analog clock
-  - Flex-box model, flow modification, pseudo-elements, z-index... 
+  A simple HTML/CSS/JS analog clock 
+  
+  - Specifically built to learn Responsive Design  
 
   📦 [zip file](https://github.com/Soviji13/Learn-FrontEnd-with-me/raw/refs/heads/main/analog-clock/analogClock.zip)
 
