@@ -1,0 +1,119 @@
+/* RESET INICIAL ---------------------------------------------- */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* FUENTE POR DEFECTO ----------------------------------------- */
+html
+{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #f0f0f0;
+}
+
+/* ESTILOS BÁSICOS -------------------------------------------- */
+h1
+{
+    color: white;
+    margin-top: 20px;
+}
+
+h2
+{
+    color: #c2c2c5;
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+body
+{
+    min-height: 100vh;
+    background: #0f0f1f;
+    align-content: center;      /* Alineamos verticalmente (cross-axis) */
+}
+
+/* ESTILOS DEL CARD ---------------------------------------------------------- */
+.card
+{
+    /* Margen vertical = 0px, margen horizontal = se adapta al ancho de body (se ajusta al centro si no hay más cosas) */
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+
+    width: clamp(200px, 50%, 500px);
+
+    background-color: #232335;
+    padding: 2rem;
+    border-radius: 15px;
+    
+    text-align: center;
+}
+
+/* Creamos la propiedad angle - ángulo donde comienza el gradiente */
+@property --angle 
+{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+/* Borde */
+.card::after, .card::before
+{
+    content: '';
+    position: absolute;
+    /* Diseño del borde y animación ................ */
+
+    /* Colores del borde */
+    /* La rotación del gradiente dependerá de la variable --angle */
+    background-image: conic-gradient(from var(--angle), transparent 50%, blue, transparent);
+
+    padding: 5px;                   /* Tamaño del borde */
+    border-radius: 15px;    
+    
+    /* Animación - Creamos la animación spin */
+    animation: 3s spin linear infinite;
+
+    /* ................................................. */
+
+    /* Su tamaño es exactamente el de card */
+    height: 100%;
+    width: 100%;
+
+    /* Se encuentra donde .card - En el centro */
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    /* Se encontrará por debajo de este */
+    z-index: -1;
+}
+
+/* Animación de spin */
+@keyframes spin 
+{
+    from
+    {
+        --angle: 0deg;
+    } 
+    to
+    {
+        --angle: 360deg;
+    } 
+}
+
+/* Efecto glow - Duplicamos ::after en ::before, pero a before (se encuentra por debajo de ::after) 
+    le añado un difuminado */
+.card::before
+{
+    filter: blur(1.5rem);
+}
+
+
+.profile_photo
+{
+    width: 50%;
+    border-radius: 50%;
+    margin: 5px;
+    box-shadow: 0 0 10px #0f0f1f;
+}
