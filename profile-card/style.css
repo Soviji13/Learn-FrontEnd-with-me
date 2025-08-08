@@ -29,23 +29,24 @@ body
 {
     min-height: 100vh;
     background: #0f0f1f;
-    align-content: center;      /* Alineamos verticalmente (cross-axis) */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* ESTILOS DEL CARD ---------------------------------------------------------- */
 .card
 {
-    /* Margen vertical = 0px, margen horizontal = se adapta al ancho de body (se ajusta al centro si no hay más cosas) */
-    margin: 0 auto;
     position: relative;
     box-sizing: border-box;
 
-    width: clamp(200px, 50%, 500px);
+    width: clamp(200px, 68%, 500px);
 
     background-color: #232335;
     padding: 2rem;
     border-radius: 15px;
-    
+
     text-align: center;
 }
 
@@ -66,13 +67,13 @@ body
 
     /* Colores del borde */
     /* La rotación del gradiente dependerá de la variable --angle */
-    background-image: conic-gradient(from var(--angle), transparent 50%, blue, transparent);
+    background-image: conic-gradient(from var(--angle), #64d8c3, transparent 5%, transparent 45%, #64d8c3 50%, transparent 55%,  transparent 95%, #64d8c3);
 
     padding: 5px;                   /* Tamaño del borde */
     border-radius: 15px;    
     
     /* Animación - Creamos la animación spin */
-    animation: 3s spin linear infinite;
+    animation: 4s spin linear infinite;
 
     /* ................................................. */
 
