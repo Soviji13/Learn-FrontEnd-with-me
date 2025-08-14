@@ -52,29 +52,37 @@ body
     /* Tamaño respecto a su contenedor */
     width: 68%;
 
+    /* Relleno entre su contenido y su borde */
     padding: 2rem;
+
+    /* Redondeado de bordes */
     border-radius: 15px;
 
+    /* Elementos inline alineados al centro */
     text-align: center;
 }
 
-/* Fondo de .card */
+/* Fondo de la tarjeta - Va aparte, porque si no, el degradado se sobrepone al fondo por defecto */
 .fondo-card
-{   position: absolute;
-    width: 100%;
-    height: 100%;
-
+{   
+    /* Posicionamiento y tamaño alineados con la tarjeta correctamente */
+    position: absolute;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
 
+    width: 100%;
+    height: 100%;
+
+    /* Diseño alineado a la tarjeta */
     border-radius: 15px;
     background-color: #232335;
 
+    /* Esto hace que vaya por debajo de los elementos como el texto o imágenes */
     z-index: -1;
 }
 
-/* Creamos la propiedad angle - ángulo donde comienza el gradiente */
+/* Creamos la propiedad angle para animar - ángulo donde comienza el gradiente */
 @property --angle 
 {
     syntax: "<angle>";
@@ -82,39 +90,46 @@ body
     inherits: false;
 }
 
-/* Borde */
+/* Borde - Efecto animado con glow */
 .card::after, .card::before
 {
-    content: '';
-    position: absolute;
-    /* Diseño del borde y animación ................ */
-
-    /* Colores del borde */
-    /* La rotación del gradiente dependerá de la variable --angle */
-    background-image: conic-gradient(from var(--angle), #64d8c3, transparent 5%, transparent 45%, #64d8c3 50%, transparent 55%,  transparent 95%, #64d8c3);
-
-    padding: 5px;                   /* Tamaño del borde */
-    border-radius: 15px;    
     
-    /* Animación - Creamos la animación spin */
-    animation: 4s spin linear infinite;
+    content: '';
+    /* ................ Posicionamiento y tamaño ajustados para ir justo debajo de .card .................... */
 
-    /* ................................................. */
+    /* Se encuentra donde .card - En el centro */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
 
     /* Su tamaño es exactamente el de card */
     height: 100%;
     width: 100%;
 
-    /* Se encuentra donde .card - En el centro */
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-
-    /* Se encontrará por debajo de este */
+    /* Se encontrará por debajo del fondo */
     z-index: -2;
+
+    /* ................ Diseño del borde y animación ......................................................... */
+
+    /* Colores del borde alineados para su respectiva visualización */
+    background-image: conic-gradient(
+        from var(--angle),      /* La rotación del gradiente dependerá de la variable --angle */
+        #64d8c3, 
+        transparent 5%, transparent 45%, 
+        #64d8c3 50%, 
+        transparent 55%,  transparent 95%, 
+        #64d8c3
+    );
+
+    padding: 5px;                   /* Tamaño del borde */
+    border-radius: 15px;            /* Redondeo del borde */
+    
+    /* Creamos la animación spin - Dura 4 segundos, lineal (cada "frame" dura lo mismo), infinita */
+    animation: 4s spin linear infinite;
 }
 
-/* Animación de spin */
+/* Animación de spin - Pasamos de 0 a 360 grados (damos vueltas completas) infinitamente */
 @keyframes spin 
 {
     from
@@ -149,10 +164,11 @@ body
 .card-container
 {
     position: relative;                     /* La posición de sus hijos dependen de su posición */
-    box-sizing: border-box;                 /* Modelo border-box */
 
     width: clamp(100px, 90vmin, 600px);     /* Mín - 100px | determinado - 90% del menor tamaño de ventana | max - 600px */
-    aspect-ratio: 1/1;                      /* Tendrá la misma altura que anchura */                
+    aspect-ratio: 1/1;                      /* Tendrá la misma altura que anchura */ 
+    padding: 50px 0;                        /* Añadimos relleno verticalmente para seguir cubriendo siempre el glow */
+
 }
 
 /* Animación necesaria para que funcione la animación de .card::before en dispositivos Apple */
