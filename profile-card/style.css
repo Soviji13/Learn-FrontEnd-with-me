@@ -36,22 +36,42 @@ body
 }
 
 /* ESTILOS DEL CARD ---------------------------------------------------------- */
+
+/* Tamaño, posición y estructura de la tarjeta */
 .card
 {
+    /* Posicionamiento central respecto a su contenedor */
     position: absolute;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
 
+    /* Modelo border-box para evitar desbordes */
     box-sizing: border-box;
 
-    width: clamp(200px, 68%, 500px);
+    /* Tamaño respecto a su contenedor */
+    width: 68%;
 
-    background-color: #232335;
     padding: 2rem;
     border-radius: 15px;
 
     text-align: center;
+}
+
+/* Fondo de .card */
+.fondo-card
+{   position: absolute;
+    width: 100%;
+    height: 100%;
+
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    border-radius: 15px;
+    background-color: #232335;
+
+    z-index: -1;
 }
 
 /* Creamos la propiedad angle - ángulo donde comienza el gradiente */
@@ -123,60 +143,41 @@ body
     box-shadow: 0 0 10px #0f0f1f;
 }
 
-/* --------------- FONDO PARA QUE FUNCIONE LA ANIMACIÓN ----------------- */
+/* --------------- CONTENEDOR DE CARD (NECESARIO PARA QUE FUNCIONE LA ANIMACIÓN GLOW CORRECTAMENTE EN DISPOSITIVOS APPLE) ----------------- */
 
-.fondo
+/* Contenedor de card */
+.card-container
 {
-    position: relative;
-    box-sizing: border-box;
+    position: relative;                     /* La posición de sus hijos dependen de su posición */
+    box-sizing: border-box;                 /* Modelo border-box */
 
-    width: clamp(100px, 90vmin, 600px);
-    aspect-ratio: 1/1;
-
-    padding: 2rem;
-    border-radius: 15px;
+    width: clamp(100px, 90vmin, 600px);     /* Mín - 100px | determinado - 90% del menor tamaño de ventana | max - 600px */
+    aspect-ratio: 1/1;                      /* Tendrá la misma altura que anchura */                
 }
 
-/* Borde */
-.fondo::after
+/* Animación necesaria para que funcione la animación de .card::before en dispositivos Apple */
+
+/* 
+    Su funcionamiento es exactamente el mismo que los pseudo-elementos de .card, pero no tiene colores su animación. 
+    Al poner esta animación debajo de .card::before, el efecto glow de .card::before junto a su animación funcionan correctamente
+    en dispositivos Apple 
+*/
+.card-container::after
 {
     content: '';
     position: absolute;
-    /* Diseño del borde y animación ................ */
 
-    /* Colores del borde */
-    /* La rotación del gradiente dependerá de la variable --angle */
     background-image: conic-gradient(from var(--angle), transparent);
 
-    padding: 5px;                   /* Tamaño del borde */
+    padding: 5px;                  
     border-radius: 15px;    
     
-    /* Animación - Creamos la animación spin */
     animation: 4s spin linear infinite;
 
-    /* ................................................. */
-
-    /* Su tamaño es exactamente el de card */
     height: 100%;
     width: 100%;
-
-    /* Se encuentra donde .card - En el centro */
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-}
-
-.fondo-card
-{   position: absolute;
-    width: 100%;
-    height: 100%;
 
     top: 50%;
     left: 50%;
     translate: -50% -50%;
-
-    border-radius: 15px;
-    background-color: #232335;
-
-    z-index: -1;
 }
