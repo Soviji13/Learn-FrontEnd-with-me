@@ -130,7 +130,7 @@ body
     position: relative;
     box-sizing: border-box;
 
-    width: clamp(300px, 75%, 600px);
+    width: clamp(100px, 90vmin, 600px);
     aspect-ratio: 1/1;
 
     padding: 2rem;
