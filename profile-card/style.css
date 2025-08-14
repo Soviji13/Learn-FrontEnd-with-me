@@ -30,6 +30,7 @@ body
     min-height: 100vh;
     background: #0f0f1f;
     
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -117,4 +118,57 @@ body
     border-radius: 50%;
     margin: 5px;
     box-shadow: 0 0 10px #0f0f1f;
+}
+
+/* --------------- PRUEBA ----------------- */
+
+.fondo
+{
+    position: absolute;
+    box-sizing: border-box;
+
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    width: clamp(300px, 90%, 600px);
+    height: 600px;
+
+    background-image: conic-gradient(from var(--angle), transparent);
+    padding: 2rem;
+    border-radius: 15px;
+
+    z-index: -1;
+}
+
+/* Borde */
+.fondo::after
+{
+    content: '';
+    position: absolute;
+    /* Diseño del borde y animación ................ */
+
+    /* Colores del borde */
+    /* La rotación del gradiente dependerá de la variable --angle */
+    background-image: conic-gradient(from var(--angle), transparent);
+
+    padding: 5px;                   /* Tamaño del borde */
+    border-radius: 15px;    
+    
+    /* Animación - Creamos la animación spin */
+    animation: 4s spin linear infinite;
+
+    /* ................................................. */
+
+    /* Su tamaño es exactamente el de card */
+    height: 100%;
+    width: 100%;
+
+    /* Se encuentra donde .card - En el centro */
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    /* Se encontrará por debajo de este */
+    z-index: -1;
 }
