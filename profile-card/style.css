@@ -7,17 +7,47 @@
 /* FUENTE POR DEFECTO ----------------------------------------- */
 html
 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Lato, Arial, Helvetica, sans-serif;
     color: #f0f0f0;
 }
 
-/* ESTILOS BÁSICOS -------------------------------------------- */
+/* TEXTO CON EFECTO GRADIENTE ANIMADO ------------------------- */
 h1
 {
+    /* Estilos del texto */
     color: white;
     margin-top: 20px;
+    font-weight: 900;
+    letter-spacing: 0.075rem;
+
+    /* Relleno con animación - Usando gradient-text */
+    background: linear-gradient(to right,
+        #fad0c4,
+        #fbc2eb, 
+        #fff8cf, 
+        #fbc2eb, 
+        #fad0c4
+    );
+    background-size: 200%;
+
+    
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: gradient-text 4s linear infinite;
 }
 
+@keyframes gradient-text 
+{
+    /* Desde su valor inicial, si no ponemos nada */
+    to
+    {
+        background-position: 200%;
+    }
+}
+
+/* ESTILOS BÁSICOS -------------------------------------------- */
 h2
 {
     color: #c2c2c5;
