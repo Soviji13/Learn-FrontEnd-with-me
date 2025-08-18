@@ -2,6 +2,11 @@
 
 <p align="center">
     <img src="assets/video.gif" alt="Demo">
+
+
+![HTML](https://img.shields.io/badge/HTML-60%25-orange)
+![CSS](https://img.shields.io/badge/CSS-40%25-blue)
+![Folder Size](https://img.shields.io/badge/Folder%20Size-1.2MB-green)
 </p>
 
 An animated profile card with dynamic text and glowing borders built using **HTML and CSS** to enhance my front-end development skills.
