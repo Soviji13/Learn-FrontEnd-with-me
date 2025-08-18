@@ -12,9 +12,10 @@
     <img src="https://img.shields.io/badge/CSS-60%25-blue?style=flat-square" alt="CSS"/>
   </a>
   <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
-    <img src="https://img.shields.io/static/v1?label=Folder%20Size&message=1.2MB&color=green&style=flat-square" alt="Folder size"/>
+    <img src="https://img.shields.io/static/v1?label=Folder%20Size&message=4.7MB&color=green&style=flat-square" alt="Folder size"/>
   </a>
-</p>
+</p> 
+
 
 An animated profile card with dynamic text and glowing borders built using **HTML and CSS** to enhance my front-end development skills.
 
