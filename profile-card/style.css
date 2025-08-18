@@ -180,13 +180,13 @@ body
     filter: blur(1.5rem);
 }
 
-
+/* Tamaño, ajuste y sombras de la foto */
 .profile_photo
 {
     width: 50%;
     border-radius: 50%;
     margin: 5px;
-    box-shadow: 0 0 10px #0f0f1f;
+    box-shadow: 0 0 10px #64d8c311;
 }
 
 /* --------------- CONTENEDOR DE CARD (NECESARIO PARA QUE FUNCIONE LA ANIMACIÓN GLOW CORRECTAMENTE EN DISPOSITIVOS APPLE) ----------------- */
