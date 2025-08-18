@@ -5,18 +5,20 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
-    <img src="https://img.shields.io/badge/HTML-40%25-orange?style=flat-square" alt="HTML"/>
-  </a>
-  <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
-    <img src="https://img.shields.io/badge/CSS-40%25-blue?style=flat-square" alt="CSS"/>
-  </a>
-  <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
-    <img src="https://img.shields.io/badge/JS-20%25-yellow?style=flat-square" alt="JS"/>
-  </a>
-  <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
+    <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
+    <img src="https://img.shields.io/badge/HTML-12%25-orange?style=flat-square" alt="HTML"/>
+    </a>
+    <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
+    <img src="https://img.shields.io/badge/CSS-62%25-blue?style=flat-square" alt="CSS"/>
+    </a>
+    <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
+    <img src="https://img.shields.io/badge/JS-26%25-yellow?style=flat-square" alt="JS"/>
+    </a>
+    <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
     <img src="https://img.shields.io/static/v1?label=Folder%20Size&message=228KB&color=green&style=flat-square" alt="Folder size"/>
-  </a>
+    </a>
+    <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
+    <img src="https://img.shields.io/static/v1?label=Zip%20Size&message=8KB&color=purple&style=flat-square" alt="Zip size"/>
 </p>
 
 Basic real-time Analog clock built with **HTML, CSS and JS** to improve my front-end development skills.

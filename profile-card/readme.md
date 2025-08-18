@@ -5,20 +5,18 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
-    <img src="https://img.shields.io/badge/HTML-10.57%25-orange?style=flat-square" alt="HTML"/>
-  </a>
-  <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
-    <img src="https://img.shields.io/badge/CSS-83.67%25-blue?style=flat-square" alt="CSS"/>
-  </a>
-  <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
+    <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
+    <img src="https://img.shields.io/badge/HTML-16%25-orange?style=flat-square" alt="HTML"/>
+    </a>
+    <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
+    <img src="https://img.shields.io/badge/CSS-84%25-blue?style=flat-square" alt="CSS"/>
+    </a>
+    <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
     <img src="https://img.shields.io/static/v1?label=Folder%20Size&message=4.7MB&color=green&style=flat-square" alt="Folder size"/>
-  </a>
-  <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
+    </a>
+    <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
     <img src="https://img.shields.io/static/v1?label=Zip%20Size&message=180KB&color=purple&style=flat-square" alt="Zip size"/>
-  </a>
 </p> 
-
 
 An animated profile card with dynamic text and glowing borders built using **HTML and CSS** to enhance my front-end development skills.
 
