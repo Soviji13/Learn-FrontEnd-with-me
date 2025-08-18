@@ -2,12 +2,19 @@
 
 <p align="center">
     <img src="assets/video.gif" alt="Demo">
-
-
-![HTML](https://img.shields.io/badge/HTML-60%25-orange)
-![CSS](https://img.shields.io/badge/CSS-40%25-blue)
-![Folder Size](https://img.shields.io/badge/Folder%20Size-1.2MB-green)
 </p>
+
+<div style="text-align: center;">
+  <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
+    <img src="https://img.shields.io/badge/HTML-40%25-orange?style=flat-square" alt="HTML"/>
+  </a>
+  <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
+    <img src="https://img.shields.io/badge/CSS-60%25-blue?style=flat-square" alt="CSS"/>
+  </a>
+  <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
+    <img src="https://img.shields.io/static/v1?label=Folder%20Size&message=1.2MB&color=green&style=flat-square" alt="Folder size"/>
+  </a>
+</div>
 
 An animated profile card with dynamic text and glowing borders built using **HTML and CSS** to enhance my front-end development skills.
 
