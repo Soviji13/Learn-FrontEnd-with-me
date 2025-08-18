@@ -4,7 +4,7 @@
     <img src="assets/video.gif" alt="Demo">
 </p>
 
-<div style="text-align: center;">
+<p align="center">
   <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
     <img src="https://img.shields.io/badge/HTML-40%25-orange?style=flat-square" alt="HTML"/>
   </a>
@@ -14,7 +14,7 @@
   <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
     <img src="https://img.shields.io/static/v1?label=Folder%20Size&message=1.2MB&color=green&style=flat-square" alt="Folder size"/>
   </a>
-</div>
+</p>
 
 An animated profile card with dynamic text and glowing borders built using **HTML and CSS** to enhance my front-end development skills.
 
