@@ -22,19 +22,22 @@ h1
 
     /* Relleno con animación - Usando gradient-text */
     background: linear-gradient(to right,
-        #fad0c4,
-        #fbc2eb, 
-        #fff8cf, 
-        #fbc2eb, 
-        #fad0c4
+        #64d8c3,
+        #1c92d2, 
+        #b2fefa, 
+        #e0ffff, 
+        #64d8c3
     );
+
+    /* Duplicamos el tamaño para que la animación sea fluida y sin cortes*/
     background-size: 200%;
 
-    
+    /* El fondo solo es visible dentro del texto */
     background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
+    -webkit-background-clip: text;              /* para en que los navegadores con webkit también funcione, ya que es una propiedad nueva */
+    -webkit-text-fill-color: transparent;       /* Para que sea posible ver el fondo */
+    
+    /* Aplicamos la animación */
     animation: gradient-text 4s linear infinite;
 }
 
@@ -162,10 +165,8 @@ body
 /* Animación de spin - Pasamos de 0 a 360 grados (damos vueltas completas) infinitamente */
 @keyframes spin 
 {
-    from
-    {
-        --angle: 0deg;
-    } 
+    /* No hace falta from: --angle: 0deg, ya que ese es el valor inicial así que al no escribir from, 
+    ya estamos dándolo por hecho */
     to
     {
         --angle: 360deg;
