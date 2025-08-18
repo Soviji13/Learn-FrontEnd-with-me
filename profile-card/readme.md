@@ -1,6 +1,8 @@
 # Profile Card (with Animations) (HTML/CSS) 🪪
 
-![Demo](assets/video.gif)
+<p align="center">
+    <img src="assets/video.gif" alt="Demo">
+</p>
 
 An animated profile card with dynamic text and glowing borders built using **HTML and CSS** to enhance my front-end development skills.
 
