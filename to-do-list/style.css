@@ -34,7 +34,7 @@ h1
 /* Contenedor de la lista en general */
 .container
 {
-    width: clamp(200px, 50%, 800px);
+    width: clamp(400px, 50%, 800px);
     min-height: 400px;
     background-color: #ffffff4a;
     box-shadow: 0 0 20px #00000062;
@@ -87,6 +87,7 @@ input
     -ms-user-select: none;
 }
 
+/* Contenedor de las tareas */
 .task-container
 {
     display: flex;
