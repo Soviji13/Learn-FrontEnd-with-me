@@ -1,0 +1,161 @@
+/* Reset inicial */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo */
+body
+{
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #153677;
+    background-image: linear-gradient(135deg, #153677, #4e085f);
+
+    display: flex;
+    align-items: center;
+}
+
+/* Título */
+h1
+{
+    font-family: arial, 'Edu NSW ACT Cursive';
+    letter-spacing: 2px;
+    color: white;
+    text-shadow: 1px 1px 2px #00000032;
+    background-color: #ffffff2a;
+    padding: 20px 0;
+    box-sizing: initial;
+    border-radius: 30px 30px 0 0;
+    font-size: 2rem;
+}
+
+/* Contenedor de la lista en general */
+.container
+{
+    width: clamp(200px, 50%, 800px);
+    min-height: 400px;
+    background-color: #ffffff4a;
+    box-shadow: 0 0 20px #00000062;
+    border-radius: 30px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+}
+
+/* Contenedor de añadir tareas - Incluye el input y el botón */
+.container-add
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 1.5rem;
+    border-radius: 50px;
+    max-width: 90%;
+}
+
+input
+{
+    min-width: 0;                       /* Por defecto, impide que en resoluciones pequeñas se empequeñezca */
+    flex: 1;                            /* Ocupa todo el espacio posible dentro del contenedor */
+    border: 0;
+    outline: none;                      /* Evita los bordes azules al clickar */
+    background: transparent;
+    font-size: 1rem;
+    background-color: #ffffffa9;
+    padding: 15px 3%;
+    border-radius: 50px 0 0 50px;
+}
+
+.container-add button
+{
+    border: none;
+    outline: none;
+    padding: 15px 7%;
+    background-color: #ffaf53;
+    border-radius: 0 50px 50px 0;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;                    /* Al poner el cursor encima, se pone con aspecto para hacer click */
+
+    /* El usuario no puede interactuar con el texto - Seleccionarlo, copiarlo, etc. */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.task-container
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 0.7rem;
+    border-bottom: solid 2px #ffffff8b;
+    padding: 0 0 0.7rem 0.5rem;
+    
+}
+
+/* Casilla de terminado */
+.terminada
+{
+    width: clamp(1rem, 3%, 3%);
+    margin: 0 3px;
+    text-align: center;     /* Lo debo cambiar en un futuro para el icono que tenga dentro */
+
+    /* Aspecto visual */
+    aspect-ratio: 1/1;
+    border-color: white;
+    border-radius: 50%;
+    border-width: 1px;
+    border-style: solid;
+    position: relative;
+    background-color: transparent;
+}
+
+/* Casilla dentro de terminado cuando lo clickemos */
+.terminada-done
+{
+    width: 50%;
+    aspect-ratio: 1/1;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+}
+
+.more-options
+{
+    flex: 0.1;
+    text-align: center;
+
+    /* Aspecto visual */
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: white;
+}
+
+/* Tarea */
+li
+{
+    font-family: arial;
+    color: #fff;
+    font-size: 1rem;
+    list-style: none;
+    word-wrap: break-word;
+    flex: 1;
+}
+
+/* Contenedor de contenedor de cada tarea */
+ul
+{
+    text-align: left;
+    margin: 0 30px;
+}
+
