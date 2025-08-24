@@ -40,7 +40,6 @@ document.getElementById("tasks-container").addEventListener("click", function(ev
                 event.target.removeChild(decoBoton);
             }
         }
-
     }
 
     // Si se clickó, vemos si el evento que ha ocurrido es que hemos pulsado el botón con la clase .terminada-done
@@ -59,5 +58,42 @@ document.getElementById("tasks-container").addEventListener("click", function(ev
         // Eliminamos el botón de casilla asociada
         let decoBoton = event.target;
         casillaAsociada.removeChild(decoBoton);
+    }
+
+    // Si se clickó, vemos si el evento que ha ocurrido es que hemos pulsado el texto de la tarea
+    if (event.target.tagName === "LI") 
+    {
+        // Obtenemos el contenedor asociado a esa casilla de terminada para acceder a su contenido (tarea)
+        const contenedorAsociado = event.target.parentElement;
+        const task = contenedorAsociado.querySelector("li");
+        let boton = contenedorAsociado.querySelector(".terminada")
+
+        // Tachamos la tarea si terminó - Además añadimos estilo visual al botón
+        if(task.getAttribute("haTerminado") === "false")
+        {
+            // Estilo del texto de tarea
+            task.style.textDecoration = "line-through";
+            task.style.opacity = 0.25;
+            task.setAttribute("haTerminado", "true");
+
+            // Creamos un nuevo div dentro del botón para añadirle decoración
+            let decoBoton = document.createElement("div");
+            decoBoton.className = "terminada-done";
+            boton.appendChild(decoBoton);
+        }
+        // Volvemos la tarea a su estado normal si clickamos y estaba terminada
+        else
+        {
+            task.style.textDecoration = "none";
+            task.style.opacity = 1;
+            task.setAttribute("haTerminado", "false");
+
+            // Eliminamos el div quitándole la decoración
+            let decoBoton = boton.querySelector(".terminada-done");
+            if (decoBoton) 
+            {
+                boton.removeChild(decoBoton);
+            }
+        }
     }
 });

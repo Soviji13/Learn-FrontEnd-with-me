@@ -23,8 +23,8 @@ add.addEventListener("click", function()
         // Creamos el contenedor de todo esto y le añadimos los elementos
         let taskContainer = document.createElement("div");
         taskContainer.className = "task-container";
-        taskContainer.appendChild(li);
         taskContainer.appendChild(finish);
+        taskContainer.appendChild(li);
         taskContainer.appendChild(moreOptions);
 
         contenedorTareas.appendChild(taskContainer);           
@@ -53,8 +53,8 @@ input.addEventListener("keydown", function(event)   // Al pulsar una tecla, se r
         // Creamos el contenedor de todo esto y le añadimos los elementos
         let taskContainer = document.createElement("div");
         taskContainer.className = "task-container";
-        taskContainer.appendChild(li);
         taskContainer.appendChild(finish);
+        taskContainer.appendChild(li);
         taskContainer.appendChild(moreOptions);
 
         contenedorTareas.appendChild(taskContainer);           

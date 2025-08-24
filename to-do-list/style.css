@@ -34,7 +34,7 @@ h1
 /* Contenedor de la lista en general */
 .container
 {
-    width: clamp(400px, 50%, 800px);
+    width: clamp(325px, 50%, 800px);
     min-height: 400px;
     background-color: #ffffff4a;
     box-shadow: 0 0 20px #00000062;
@@ -49,8 +49,9 @@ h1
 .container-add
 {
     display: flex;
+    position: relative;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin: 20px 1.5rem;
     border-radius: 50px;
     max-width: 90%;
@@ -71,6 +72,7 @@ input
 
 .container-add button
 {
+    flex: 0.1;
     border: none;
     outline: none;
     padding: 15px 7%;
@@ -103,8 +105,8 @@ input
 /* Casilla de terminado */
 .terminada
 {
-    width: clamp(1rem, 3%, 3%);
-    margin: 0 3px;
+    width: clamp(1rem, 6%, 25px);
+    margin: 0 10px 0 0;
     text-align: center;     /* Lo debo cambiar en un futuro para el icono que tenga dentro */
 
     /* Aspecto visual */
@@ -140,6 +142,14 @@ input
     font-weight: 700;
     letter-spacing: 1.5px;
     color: white;
+
+    /* El usuario no puede interactuar con el texto - Seleccionarlo, copiarlo, etc. */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+    position:relative;
 }
 
 /* Tarea */
@@ -151,6 +161,12 @@ li
     list-style: none;
     word-wrap: break-word;
     flex: 1;
+
+    /* El usuario no puede interactuar con el texto - Seleccionarlo, copiarlo, etc. */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 /* Contenedor de contenedor de cada tarea */
