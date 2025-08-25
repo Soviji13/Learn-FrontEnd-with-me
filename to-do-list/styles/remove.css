@@ -1,0 +1,70 @@
+/* Reset inicial */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Contenedor */
+.remove-task
+{
+    width: clamp(1rem, 6%, 25px); /*TAMAÑO DE VERDAD*/
+    /*margin-bottom: 20px;    /* Borrar después */
+    /*width: 400px;*/
+    aspect-ratio: 1/1;
+    background-color: transparent;
+    margin: 0 5px;/*PONER DESPUÉS*/
+    position: relative;
+}
+
+/* Cubo */
+.remove-task::before {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 70%;
+    background: white;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: -50% 0;
+}
+
+.remove-task .tapadera
+{
+    position: absolute;
+    top: 0;
+    width: 90%;
+    height: 23%;
+    left: 50%;
+    translate: -50% 0;
+    background-color: transparent;
+    z-index: -1;
+}
+
+.remove-task .tapadera::after
+{
+    content:"";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-radius: 50px;
+    height: 60%;
+    background-color: white;
+}
+
+.remove-task .tapadera::before
+{
+    content:"";
+    position: absolute;
+    top: 0;
+    width: 20%;
+    left: 50%;
+    translate: -50% 0;
+    border-radius: 50px;
+    height: 35%;
+    background-color: white;
+}
+
+

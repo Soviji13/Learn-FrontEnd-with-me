@@ -39,7 +39,7 @@ h1
     background-color: #ffffff4a;
     box-shadow: 0 0 20px #00000062;
     border-radius: 30px;
-    margin: 0 auto;
+    margin: 50px auto;
     text-align: center;
     position: relative;
     justify-content: center;
@@ -52,7 +52,7 @@ h1
     position: relative;
     align-items: center;
     justify-content: center;
-    margin: 20px 1.5rem;
+    margin: 20px auto;
     border-radius: 50px;
     max-width: 90%;
 }
@@ -89,19 +89,6 @@ input
     -ms-user-select: none;
 }
 
-/* Contenedor de las tareas */
-.task-container
-{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    margin-bottom: 0.7rem;
-    border-bottom: solid 2px #ffffff8b;
-    padding: 0 0 0.7rem 0.5rem;
-    
-}
-
 /* Casilla de terminado */
 .terminada
 {
@@ -130,13 +117,14 @@ input
     top: 50%;
     left: 50%;
     translate: -50% -50%;
+    z-index: -1;
 
 }
 
 .more-options
 {
-    flex: 0.1;
     text-align: center;
+    margin: 10px;
 
     /* Aspecto visual */
     font-weight: 700;
@@ -152,7 +140,19 @@ input
     position:relative;
 }
 
-/* Tarea */
+/* Contenedor de una tarea - Título, círculo de terminado, basura y edición */
+.task-container
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 0.7rem;
+    margin: 0 16px;
+    border-bottom: solid 2px #ffffff8b;
+}
+
+/* Tarea - texto de la tarea */
 li
 {
     font-family: arial;
@@ -161,12 +161,8 @@ li
     list-style: none;
     word-wrap: break-word;
     flex: 1;
-
-    /* El usuario no puede interactuar con el texto - Seleccionarlo, copiarlo, etc. */
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+    cursor:default;     
+    padding: 1rem 0;
 }
 
 /* Contenedor de contenedor de cada tarea */

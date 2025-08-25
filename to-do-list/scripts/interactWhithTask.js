@@ -1,4 +1,4 @@
-// Variables
+/* PARA TACHAR TAREAS */
 
 // Cuando se pulse el botón de finish, la tarea se tachará y se pondrá más transparente (si la tarea no está terminada),
 // o volverá a como estaba (si la tarea está terminada)
@@ -22,7 +22,7 @@ document.getElementById("tasks-container").addEventListener("click", function(ev
             task.setAttribute("haTerminado", "true");
 
             // Creamos un nuevo div dentro del botón para añadirle decoración
-            let decoBoton = document.createElement("div");
+            const decoBoton = document.createElement("div");
             decoBoton.className = "terminada-done";
             event.target.appendChild(decoBoton);
         }
@@ -34,30 +34,12 @@ document.getElementById("tasks-container").addEventListener("click", function(ev
             task.setAttribute("haTerminado", "false");
 
             // Eliminamos el div quitándole la decoración
-            let decoBoton = event.target.querySelector(".terminada-done");
+            const decoBoton = event.target.querySelector(".terminada-done");
             if (decoBoton) 
             {
                 event.target.removeChild(decoBoton);
             }
         }
-    }
-
-    // Si se clickó, vemos si el evento que ha ocurrido es que hemos pulsado el botón con la clase .terminada-done
-    if (event.target.classList.contains("terminada-done")) 
-    {
-        // Obtenemos la tarea correspondiente
-        const casillaAsociada = event.target.parentElement;
-        const contenedorAsociado = casillaAsociada.parentElement;
-        const task = contenedorAsociado.querySelector("li");
-
-        // Le ponemos de nuevo que no ha terminado
-        task.style.textDecoration = "none";
-        task.style.opacity = 1;
-        task.setAttribute("haTerminado", "false");
-
-        // Eliminamos el botón de casilla asociada
-        let decoBoton = event.target;
-        casillaAsociada.removeChild(decoBoton);
     }
 
     // Si se clickó, vemos si el evento que ha ocurrido es que hemos pulsado el texto de la tarea
@@ -95,5 +77,21 @@ document.getElementById("tasks-container").addEventListener("click", function(ev
                 boton.removeChild(decoBoton);
             }
         }
+    }
+});
+
+/* PARA BORRAR TAREAS */ 
+document.getElementById("tasks-container").addEventListener("click", function(event)
+{
+    // Vemos qué casilla de borrar se ha pulsado en concreto
+    if (event.target.classList.contains("remove-task"))
+    {
+        // Accedemos a su padre - Contenedor
+        const contenedorAsociado = event.target.parentElement;
+        // Accedemos al padre del contenedor - Contenedor de todas las tareas
+        const contenedortotal = contenedorAsociado.parentElement;
+        // Eliminamos eel contendor de la tarea específico del contenedor total
+        contenedortotal.removeChild(contenedorAsociado);
+        
     }
 });
