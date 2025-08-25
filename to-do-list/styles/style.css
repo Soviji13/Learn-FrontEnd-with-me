@@ -106,27 +106,40 @@ input
     z-index: -1;
 }
 
-/* Casilla de terminado */
+/* Contenedor de casilla de terminado */
 .terminada
 {
-    width: clamp(1rem, 6%, 25px);
-    margin: 0 10px 0 0;
+    width: clamp(1rem, 15%, 40px);
+    aspect-ratio: 1/1;
     text-align: center;     /* Lo debo cambiar en un futuro para el icono que tenga dentro */
 
-    /* Aspecto visual */
+    position: relative;
+    background-color: transparent;
+    margin-left: 5px;
+}
+
+.terminada::after
+{
+    content: "";
+    width: 50%;
     aspect-ratio: 1/1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    
+    /* Aspecto visual */
     border-color: #1c1d4e;
     border-radius: 50%;
     border-width: 1px;
     border-style: solid;
-    position: relative;
-    background-color: transparent;
+
 }
 
 /* Casilla dentro de terminado cuando lo clickemos */
 .terminada-done
 {
-    width: 50%;
+    width: 25%;
     aspect-ratio: 1/1;
     background-color: #1c1d4e;
     border-radius: 50%;
@@ -135,8 +148,8 @@ input
     left: 50%;
     translate: -50% -50%;
     z-index: -1;
-
 }
+
 
 .more-options
 {
@@ -160,6 +173,7 @@ input
 /* Contenedor de una tarea - Título, círculo de terminado, basura y edición */
 .task-container
 {
+    height: 25%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -187,7 +201,7 @@ li
     flex: 1;
     cursor:default;     
     padding: 1rem 0;
-    margin: 0 10px 0 5px;
+    margin: 0 10px 0 0;
     cursor:default;
 
     /* El usuario no puede interactuar con el texto - Seleccionarlo, copiarlo, etc. */
