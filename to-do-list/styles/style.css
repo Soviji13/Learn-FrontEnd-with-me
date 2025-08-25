@@ -11,7 +11,7 @@ body
     width: 100vw;
     min-height: 100vh;
     background-color: #153677;
-    background-image: linear-gradient(135deg, #153677, #4e085f);
+    background-image: linear-gradient(135deg, #ffffff, #aed0da);
 
     display: flex;
     align-items: center;
@@ -22,13 +22,14 @@ h1
 {
     font-family: arial, 'Edu NSW ACT Cursive';
     letter-spacing: 2px;
-    color: white;
-    text-shadow: 1px 1px 2px #00000032;
-    background-color: #ffffff2a;
+    color: #1c1d4e;
+    text-shadow: 1px 1px 2px #ffffff32;
+    background-color: #c1faff;
     padding: 20px 0;
     box-sizing: initial;
     border-radius: 30px 30px 0 0;
     font-size: 2rem;
+    font-weight: 3000;              /* CAMBIAR LA FUENTE*/
 }
 
 /* Contenedor de la lista en general */
@@ -36,13 +37,14 @@ h1
 {
     width: clamp(325px, 50%, 800px);
     min-height: 400px;
-    background-color: #ffffff4a;
+    background-color: #ffffff;
     box-shadow: 0 0 20px #00000062;
     border-radius: 30px;
     margin: 50px auto;
     text-align: center;
     position: relative;
     justify-content: center;
+    z-index: 1;
 }
 
 /* Contenedor de añadir tareas - Incluye el input y el botón */
@@ -65,7 +67,7 @@ input
     outline: none;                      /* Evita los bordes azules al clickar */
     background: transparent;
     font-size: 1rem;
-    background-color: #ffffffa9;
+    background-color: #9dd5da55;
     padding: 15px 3%;
     border-radius: 50px 0 0 50px;
 }
@@ -76,9 +78,9 @@ input
     border: none;
     outline: none;
     padding: 15px 7%;
-    background-color: #ffaf53;
-    border-radius: 0 50px 50px 0;
-    color: #fff;
+    background-color: #3ac6e6;
+    border-radius: 50px;
+    color: #ffffff;
     font-size: 1rem;
     cursor: pointer;                    /* Al poner el cursor encima, se pone con aspecto para hacer click */
 
@@ -87,6 +89,21 @@ input
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+
+    position:relative;
+}
+
+.container-add button::before
+{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background-color: #9dd5da55;
+
+    z-index: -1;
 }
 
 /* Casilla de terminado */
@@ -129,7 +146,7 @@ input
     /* Aspecto visual */
     font-weight: 700;
     letter-spacing: 1.5px;
-    color: white;
+    color: #1c1d4e;
 
     /* El usuario no puede interactuar con el texto - Seleccionarlo, copiarlo, etc. */
     user-select: none;
@@ -149,11 +166,12 @@ input
 
     margin-bottom: 0.7rem;
     margin: 0 16px;
-    border-bottom: solid 2px #ffffff8b;
+    border-bottom: solid 2px #9e9e9e74;
 }
 
 /* Solo se añade un separador si no es el último */
-.task-container:last-child {
+.task-container:last-child
+{
     border-bottom: none;
     margin-bottom: 15px;
 }
@@ -162,7 +180,7 @@ input
 li
 {
     font-family: arial;
-    color: #fff;
+    color: #1c1d4e;
     font-size: 1rem;
     list-style: none;
     word-break: break-word;
