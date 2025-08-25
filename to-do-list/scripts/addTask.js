@@ -34,7 +34,10 @@ function addTask() {
         taskContainer.appendChild(moreOptions);
 
         contenedorTareas.appendChild(taskContainer);           
-        input.value = '';          
+        input.value = '';      
+        
+        // Guardamos en la memoria
+        saveData();
     }
 }
 
@@ -47,3 +50,18 @@ input.addEventListener("keydown", function(event) {
         addTask();
     }
 });
+
+// Las tareas se guardarán en la memoria del navegador para que permanezcan siempre
+function saveData()
+{
+    localStorage.setItem("tasksData", contenedorTareas.innerHTML);
+}
+
+// Mostrará las tareas que habían guardadas
+function showTask()
+{
+    contenedorTareas.innerHTML = localStorage.getItem("tasksData");
+}
+
+// Al recargar, se verán las tareas
+document.addEventListener("DOMContentLoaded", showTask);

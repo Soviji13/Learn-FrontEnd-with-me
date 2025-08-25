@@ -152,6 +152,12 @@ input
     border-bottom: solid 2px #ffffff8b;
 }
 
+/* Solo se añade un separador si no es el último */
+.task-container:last-child {
+    border-bottom: none;
+    margin-bottom: 15px;
+}
+
 /* Tarea - texto de la tarea */
 li
 {
@@ -159,10 +165,18 @@ li
     color: #fff;
     font-size: 1rem;
     list-style: none;
-    word-wrap: break-word;
+    word-break: break-word;
     flex: 1;
     cursor:default;     
     padding: 1rem 0;
+    margin: 0 10px 0 5px;
+    cursor:default;
+
+    /* El usuario no puede interactuar con el texto - Seleccionarlo, copiarlo, etc. */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 /* Contenedor de contenedor de cada tarea */
