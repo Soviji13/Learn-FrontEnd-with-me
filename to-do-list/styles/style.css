@@ -106,51 +106,6 @@ input
     z-index: -1;
 }
 
-/* Contenedor de casilla de terminado */
-.terminada
-{
-    width: clamp(1rem, 15%, 40px);
-    aspect-ratio: 1/1;
-    text-align: center;     /* Lo debo cambiar en un futuro para el icono que tenga dentro */
-
-    position: relative;
-    background-color: transparent;
-    margin-left: 5px;
-}
-
-.terminada::after
-{
-    content: "";
-    width: 50%;
-    aspect-ratio: 1/1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    
-    /* Aspecto visual */
-    border-color: #1c1d4e;
-    border-radius: 50%;
-    border-width: 1px;
-    border-style: solid;
-
-}
-
-/* Casilla dentro de terminado cuando lo clickemos */
-.terminada-done
-{
-    width: 25%;
-    aspect-ratio: 1/1;
-    background-color: #1c1d4e;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    z-index: -1;
-}
-
-
 .more-options
 {
     text-align: center;

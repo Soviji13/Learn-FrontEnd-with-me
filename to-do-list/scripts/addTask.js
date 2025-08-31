@@ -9,8 +9,19 @@ function addTask() {
         // Creamos los elementos dentro de task-container
         let li = document.createElement("li");                  // Texto
         li.setAttribute("haTerminado", "false");
+
         let finish = document.createElement("div");             // Círculo de completado
         finish.className = "terminada"; 
+        // PARA ACCESIBILIDAD
+        finish.setAttribute("role", "button");
+        finish.setAttribute("tabindex", "0");
+        finish.setAttribute("aria-label", "Mark as finished");
+
+        // Añadimos ya el interior del círculo completado
+        const decoBoton = document.createElement("div");
+        decoBoton.className = "terminada-done";
+        finish.appendChild(decoBoton);
+
         let moreOptions = document.createElement("div");        // Más opciones (auqnue quizá solo lo dejo en editar)
         moreOptions.className = "more-options";
         let remove = document.createElement("div");
@@ -61,6 +72,16 @@ function saveData()
 function showTask()
 {
     contenedorTareas.innerHTML = localStorage.getItem("tasksData");
+
+    // Accesibilidad: añadir event listener a cada botón terminado
+    const finishButtons = contenedorTareas.querySelectorAll(".terminada");
+    finishButtons.forEach(finish => {
+        finish.addEventListener("keydown", function(event) {
+            if (event.key === "Enter" || event.key === " ") {
+                finish.click(); // Simula el click en el botón de terminado
+            }
+        });
+    });
 }
 
 // Al recargar, se verán las tareas
