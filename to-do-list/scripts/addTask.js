@@ -44,8 +44,16 @@ function addTask() {
         taskContainer.appendChild(remove);
         taskContainer.appendChild(moreOptions);
 
-        contenedorTareas.appendChild(taskContainer);           
-        input.value = '';      
+        contenedorTareas.appendChild(taskContainer);     
+        addHoverListenerToTask(taskContainer);          // Añadimos un listener a todos sus hijos de nuevo   
+        input.value = '';   
+
+        // Restablece el borde inferior de la penúltima tarea
+        let tareas = contenedorTareas.querySelectorAll('.task-container');
+        if (tareas.length > 1) 
+        {
+        tareas[tareas.length - 2].style.borderBottom = 'solid 2px #9e9e9e74';
+        }
         
         // Guardamos en la memoria
         saveData();
@@ -59,6 +67,7 @@ add.addEventListener("click", addTask);
 input.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         addTask();
+        addListenersToTasks();
     }
 });
 
@@ -81,6 +90,13 @@ function showTask()
                 finish.click(); // Simula el click en el botón de terminado
             }
         });
+    });
+
+    // Para que se aplique el sensor a todas las tareas
+    let tareas = contenedorTareas.querySelectorAll(".task-container");
+    tareas.forEach(taskContainer => 
+    {
+        addHoverListenerToTask(taskContainer);
     });
 }
 

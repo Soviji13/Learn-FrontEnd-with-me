@@ -136,7 +136,19 @@ input
     margin-bottom: 0.7rem;
     margin: 0 16px;
     border-bottom: solid 2px #9e9e9e74;
+    border-radius: 10px 10px 0 0;
+
+    transition: scale 700ms;
 }
+
+/* Al estar sobre ella 
+.task-container:hover
+{
+    scale: 1.02;
+    border-bottom: none;
+    background-color: #eeeeee;
+    border-radius: 10px;
+}*/
 
 /* Solo se añade un separador si no es el último */
 .task-container:last-child
@@ -164,10 +176,8 @@ li
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-
-    /* Animación para mejora visual */
-    transition: 500ms ease;
 }
+
 
 /* Contenedor de contenedor de cada tarea */
 ul
