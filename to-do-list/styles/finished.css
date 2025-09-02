@@ -1,3 +1,5 @@
+/* ARREGLAR QUE AL PRIMER CLICK NO HACE LA ANIMACIÓN DE GIRO */
+
 /* Contenedor de casilla de terminado */
 .terminada
 {
@@ -48,7 +50,7 @@
     background-repeat: no-repeat;
 
     /* Valores al principio - Sin pulsar nada */
-    rotate: -360deg;
+    transform: rotateZ(-360deg);
     scale: 0;
     opacity: 0;
     transition: 500ms ease;

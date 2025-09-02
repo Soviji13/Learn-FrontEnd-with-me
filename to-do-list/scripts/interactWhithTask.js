@@ -30,11 +30,12 @@ document.getElementById("tasks-container").addEventListener("click", function(ev
         // Volvemos la tarea a su estado normal si clickamos y estaba terminada
         else
         {
+            // Estilo del texto de tarea
             task.style.textDecoration = "none";
             task.style.opacity = 1;
             task.setAttribute("haTerminado", "false");
 
-            // Añadimos animaxción de salida a deco-botón
+            // Añadimos animación de salida a deco-botón
             let decoBoton = event.target.querySelector(".terminada-done"); //Accedemos a él
             decoBoton.style.transform = `rotateZ(-360deg)`;
             decoBoton.style.scale = "0";
@@ -61,24 +62,25 @@ document.getElementById("tasks-container").addEventListener("click", function(ev
             task.style.opacity = 0.25;
             task.setAttribute("haTerminado", "true");
 
-            // Creamos un nuevo div dentro del botón para añadirle decoración
-            let decoBoton = document.createElement("div");
-            decoBoton.className = "terminada-done";
-            boton.appendChild(decoBoton);
+              // Añadimos animación de entrada a deco-botón
+            let decoBoton = boton.querySelector(".terminada-done"); //Accedemos a él
+            decoBoton.style.transform = `rotateZ(0deg)`;
+            decoBoton.style.scale = "1";
+            decoBoton.style.opacity = "1";
         }
         // Volvemos la tarea a su estado normal si clickamos y estaba terminada
         else
         {
+            // Estilo del texto de tarea
             task.style.textDecoration = "none";
             task.style.opacity = 1;
             task.setAttribute("haTerminado", "false");
 
-            // Eliminamos el div quitándole la decoración
-            let decoBoton = boton.querySelector(".terminada-done");
-            if (decoBoton) 
-            {
-                boton.removeChild(decoBoton);
-            }
+            // Añadimos animación de salida a deco-botón
+            let decoBoton = boton.querySelector(".terminada-done"); //Accedemos a él
+            decoBoton.style.transform = `rotateZ(-360deg)`;
+            decoBoton.style.scale = "0";
+            decoBoton.style.opacity = "0";
         }
 
         // Guardamos estado en la memoria

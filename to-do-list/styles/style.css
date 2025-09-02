@@ -164,6 +164,9 @@ li
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+
+    /* Animación para mejora visual */
+    transition: 500ms ease;
 }
 
 /* Contenedor de contenedor de cada tarea */
