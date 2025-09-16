@@ -135,26 +135,31 @@ input
 
     margin-bottom: 0.7rem;
     margin: 0 16px;
-    border-bottom: solid 2px #9e9e9e74;
-    border-radius: 10px 10px 0 0;
+    border-top: solid 2px #9e9e9e74;
+    border-radius: 0 0 10px 10px;
 
     transition: scale 700ms;
 }
 
-/* Al estar sobre ella 
+/* Al estar sobre ella */
 .task-container:hover
 {
     scale: 1.02;
-    border-bottom: none;
+    border-top: none;
     background-color: #eeeeee;
     border-radius: 10px;
-}*/
+}
+
+.task-container:hover + .task-container
+{
+    border-top: none;
+    border-bottom: none;
+}
 
 /* Solo se añade un separador si no es el último */
-.task-container:last-child
+.task-container:first-child
 {
-    border-bottom: none;
-    margin-bottom: 15px;
+    border-top: none;
 }
 
 /* Tarea - texto de la tarea */
