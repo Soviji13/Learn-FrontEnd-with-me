@@ -138,27 +138,31 @@ input
     margin: 0 16px;
     border-top: solid 2px #9e9e9e74;
     border-radius: 0 0 10px 10px;
+
+    transition: border-color 100ms;
 }
 /* --- SÓLO SE APLICA EN DISPOSITIVOS NO TÁCTILES */
 @media (hover:hover) and (pointer:fine)
 {
     /* Al estar sobre ella */
-    /*
+    
     .task-container:hover
     {
         border-top: #fff;
-        background-color: #f6f6f6;
+        background-color: #7593a41a;
         border-radius: 10px;
-        margin: 2px 0;                  /* Corregir desajustes lista */
+        margin-top: 2px;
+        margin-bottom: 2px;
+        scale: 1.01;
     }
-    /*
+    
     .task-container:hover + .task-container
     {
         border-top: #fff;
         border-bottom: #fff;
     }
-    */
-/*}*/
+    
+}
 
 
 /* Solo se añade un separador si no es el último */
