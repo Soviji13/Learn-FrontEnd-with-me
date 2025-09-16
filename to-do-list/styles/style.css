@@ -35,7 +35,7 @@ h1
 /* Contenedor de la lista en general */
 .container
 {
-    width: clamp(325px, 50%, 800px);
+    width: clamp(325px, 65%, 800px);
     min-height: 400px;
     background-color: #ffffff;
     box-shadow: 0 0 20px #00000062;
@@ -45,6 +45,7 @@ h1
     position: relative;
     justify-content: center;
     z-index: 1;
+    overflow: hidden;
 }
 
 /* Contenedor de añadir tareas - Incluye el input y el botón */
@@ -137,29 +138,39 @@ input
     margin: 0 16px;
     border-top: solid 2px #9e9e9e74;
     border-radius: 0 0 10px 10px;
-
-    transition: scale 700ms;
 }
-
-/* Al estar sobre ella */
-.task-container:hover
+/* --- SÓLO SE APLICA EN DISPOSITIVOS NO TÁCTILES */
+@media (hover:hover) and (pointer:fine)
 {
-    scale: 1.02;
-    border-top: none;
-    background-color: #eeeeee;
-    border-radius: 10px;
-}
+    /* Al estar sobre ella */
+    /*
+    .task-container:hover
+    {
+        border-top: #fff;
+        background-color: #f6f6f6;
+        border-radius: 10px;
+        margin: 2px 0;                  /* Corregir desajustes lista */
+    }
+    /*
+    .task-container:hover + .task-container
+    {
+        border-top: #fff;
+        border-bottom: #fff;
+    }
+    */
+/*}*/
 
-.task-container:hover + .task-container
-{
-    border-top: none;
-    border-bottom: none;
-}
 
 /* Solo se añade un separador si no es el último */
 .task-container:first-child
 {
     border-top: none;
+}
+
+/* Último hijo */
+.task-container:last-child
+{
+    margin-bottom: 20px;
 }
 
 /* Tarea - texto de la tarea */

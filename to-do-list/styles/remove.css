@@ -15,6 +15,7 @@
     background-color: transparent;
     margin: 0 5px;/*PONER DESPUÉS*/
     position: relative;
+    z-index: 1;
 }
 
 /* Cubo */
