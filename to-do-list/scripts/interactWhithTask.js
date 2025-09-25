@@ -45,47 +45,6 @@ document.getElementById("tasks-container").addEventListener("click", function(ev
         // Guardamos estado en la memoria
         saveData();
     }
-
-    // Si se clickó, vemos si el evento que ha ocurrido es que hemos pulsado el texto de la tarea
-    if (event.target.tagName === "LI") 
-    {
-        // Obtenemos el contenedor asociado a esa casilla de terminada para acceder a su contenido (tarea)
-        const contenedorAsociado = event.target.parentElement;
-        const task = contenedorAsociado.querySelector("li");
-        let boton = contenedorAsociado.querySelector(".terminada")
-
-        // Tachamos la tarea si terminó - Además añadimos estilo visual al botón
-        if(task.getAttribute("haTerminado") === "false")
-        {
-            // Estilo del texto de tarea
-            task.style.textDecoration = "line-through";
-            task.style.opacity = 0.25;
-            task.setAttribute("haTerminado", "true");
-
-              // Añadimos animación de entrada a deco-botón
-            let decoBoton = boton.querySelector(".terminada-done"); //Accedemos a él
-            decoBoton.style.transform = `rotateZ(0deg)`;
-            decoBoton.style.scale = "1";
-            decoBoton.style.opacity = "1";
-        }
-        // Volvemos la tarea a su estado normal si clickamos y estaba terminada
-        else
-        {
-            // Estilo del texto de tarea
-            task.style.textDecoration = "none";
-            task.style.opacity = 1;
-            task.setAttribute("haTerminado", "false");
-
-            // Añadimos animación de salida a deco-botón
-            let decoBoton = boton.querySelector(".terminada-done"); //Accedemos a él
-            decoBoton.style.transform = `rotateZ(-360deg)`;
-            decoBoton.style.scale = "0";
-            decoBoton.style.opacity = "0";
-        }
-
-        // Guardamos estado en la memoria
-        saveData();
-    }
 });
 
 /* PARA BORRAR TAREAS */ 
@@ -105,3 +64,29 @@ document.getElementById("tasks-container").addEventListener("click", function(ev
         saveData();
     }
 });
+
+
+/* PARA EDITAR TAREAS */
+
+// Primero necesito obtener el taskcontainer para por temas de accesibilidad,
+// no haga falta darle exactamente al elemento
+
+// Creo la función editar tarea
+function editarTarea(event)
+{
+    // Si se clickó, vemos si lo que se ha clickado es un li y no es editable (para que no se quede)
+    if(event.target.tagName === "LI" && !event.target.isContentEditable)
+    {
+        // Guardo el contenido pasado (para si pulso enter vacío, no se quede así)
+        textoOriginal = event.target.textContent;
+
+        // Hacemos que se pueda editar
+        event.target.contentEditable = true;
+
+        // Focus, hacemos que el elemento se active
+        event.target.focus();
+    }
+}
+
+// Se pasa el argumento directamente
+document.getElementById("tasks-container").addEventListener("click", editarTarea);

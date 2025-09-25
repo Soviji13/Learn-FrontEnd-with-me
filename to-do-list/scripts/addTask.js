@@ -22,8 +22,8 @@ function addTask() {
         decoBoton.className = "terminada-done";
         finish.appendChild(decoBoton);
 
-        let moreOptions = document.createElement("div");        // Más opciones (auqnue quizá solo lo dejo en editar)
-        moreOptions.className = "more-options";
+        /*let moreOptions = document.createElement("div");        // Más opciones (auqnue quizá solo lo dejo en editar)
+        moreOptions.className = "more-options";*/
         let remove = document.createElement("div");
         remove.className = "remove-task";                       // Eliminar tarea
 
@@ -34,7 +34,6 @@ function addTask() {
 
         // Le añadimos su valor a cada uno
         li.innerHTML = input.value;
-        moreOptions.innerHTML = "...";
 
         // Creamos el contenedor de todo esto y le añadimos los elementos en el orden adecuado
         let taskContainer = document.createElement("div");
@@ -42,10 +41,11 @@ function addTask() {
         taskContainer.appendChild(finish);
         taskContainer.appendChild(li);
         taskContainer.appendChild(remove);
-        taskContainer.appendChild(moreOptions);
+        /*taskContainer.appendChild(moreOptions);*/
 
         contenedorTareas.appendChild(taskContainer);      
         input.value = '';   
+
         
         // Guardamos en la memoria
         saveData();
