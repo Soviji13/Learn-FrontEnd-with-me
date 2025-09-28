@@ -353,5 +353,4 @@ function editarTareaSig (tarea)
             }
         }
     } 
-
 }
