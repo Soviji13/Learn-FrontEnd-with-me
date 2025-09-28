@@ -68,6 +68,20 @@ document.getElementById("tasks-container").addEventListener("click", function(ev
 
 /* PARA EDITAR TAREAS */
 
+// Variable global para recargar la página para que no pete (intentaré mejorarlo)
+let nCambios = 0;
+
+// Siempre que abramos la 
+document.addEventListener('DOMContentLoaded', function() {
+    // Limpiar cualquier tarea que quedó buggeada
+    const tareasBuggeadas = document.querySelectorAll('li[contenteditable="true"]');
+    tareasBuggeadas.forEach(tarea => {
+        tarea.contentEditable = false;
+    });
+
+    document.getElementById("tasks-container").addEventListener("click", editarTarea);
+});
+
 // Primero necesito obtener el taskcontainer para por temas de accesibilidad,
 // no haga falta darle exactamente al elemento
 
@@ -84,9 +98,260 @@ function editarTarea(event)
         event.target.contentEditable = true;
 
         // Focus, hacemos que el elemento se active
-        event.target.focus();
+        //event.target.focus();
+
+        /* Haremos dos listeners, uno por si clickamos fuera del contenedor y otro por si le damos a enter */
+        event.target.addEventListener("keydown", manejarTeclas);
+        event.target.addEventListener("blur", finalizarEdicion);
+
+        /* Función para finalizar la edición */
+        function finalizarEdicion()
+        {
+            // Si lo dejamos vacío
+            if(event.target.textContent.trim() === "")
+            {
+                event.target.textContent = textoOriginal;
+            }
+
+            // Descartamos la edición
+            event.target.contentEditable = false;
+            
+            // Guardamos los datos
+            saveData();
+
+            // Quitamos los listener
+            document.getElementById("tasks-container").removeEventListener("click", editarTarea);
+            document.getElementById("tasks-container").addEventListener("click", editarTarea);
+        }
+
+        /* Función para manejar las teclas */
+        function manejarTeclas (e)
+        {
+            if(e.key === "Enter")
+            {
+                e.preventDefault(); // Evitamos saltos de línea
+                finalizarEdicion();
+
+            if(nCambios >= 1000)
+            {
+                nCambios = 0;          
+                location.reload();
+            }
+            }
+            else if(e.key === "Escape")
+            {
+                event.target.textContent = textoOriginal;
+                finalizarEdicion();
+            }
+            else if(e.key === "ArrowDown")  // Pasamos a la siguiente tarea 
+            {
+                nCambios++;
+
+                // Evitamos comportamiento por defecto
+                e.preventDefault();
+                // Terminamos de editar la actual
+                finalizarEdicion();
+
+                // Buscamos la siguiente tarea
+                const contenedorActual = event.target.parentElement;
+                //alert("Contenedor actual: " + contenedorActual.className);
+                const siguienteContenedor = contenedorActual.nextElementSibling;
+
+                // Si hay una siguiente
+                if(siguienteContenedor)
+                {
+                    //alert("✅ Hay siguiente contenedor");
+                    // Accedemos a su campo de texto
+                    const siguienteTarea = siguienteContenedor.querySelector("li");
+                    
+                    // Si hay siguiente tarea, simulamos doble click
+                    if(siguienteTarea)
+                    {
+                        /*siguienteTarea.contentEditable = true;
+                        siguienteTarea.focus();*/
+                        editarTareaSig(siguienteTarea);
+                        // Hacemos los mismos manejadores fuera de
+                    }
+                }
+                // Si no hay una siguiente
+                else
+                {
+                    event.target.focus;
+                    editarTareaSig(event.target);
+                }
+            }
+            else if(e.key === "ArrowUp")  // Pasamos a la anterior tarea 
+            {
+                nCambios++;
+
+                // Evitamos comportamiento por defecto
+                e.preventDefault();
+                // Terminamos de editar la actual
+                finalizarEdicion();
+
+                // Buscamos la anterior tarea
+                const contenedorActual = event.target.parentElement;
+                const siguienteContenedor = contenedorActual.previousElementSibling;
+
+                // Si hay una siguiente
+                if(siguienteContenedor)
+                {
+                    // Accedemos a su campo de texto
+                    const siguienteTarea = siguienteContenedor.querySelector("li");
+                    
+                    // Si hay siguiente tarea, simulamos doble click
+                    if(siguienteTarea)
+                    {
+                        editarTareaSig(siguienteTarea);
+                        // Hacemos los mismos manejadores fuera de
+                    }
+                }
+                // Si no hay una siguiente
+                else
+                {
+                    event.target.focus;
+                    editarTareaSig(event.target);
+                }
+            }
+        } 
     }
 }
 
-// Se pasa el argumento directamente
-document.getElementById("tasks-container").addEventListener("click", editarTarea);
+// Creamos una función una vez estamos en el modo editarTarea para editar las demás
+// Esta función será recursiva siempre que se pulse la tecla para la siguiente tarea
+function editarTareaSig (tarea)
+{
+    // Para forzar reload si el usuario lleva muchos nCambios aunque no le de enter
+    // 1000 equivale a 20 cambios (se aumentan de forma recursiva)
+    if(nCambios >= 1500)
+    {
+        // Descartamos la edición para que no se buguee
+        tarea.contentEditable = false;
+        saveData();
+        nCambios = 0;
+        location.reload();
+    }
+
+    tarea.contentEditable = true;
+    tarea.focus();
+
+    // Ponemos el cursor al final
+    if (typeof window.getSelection != "undefined" && typeof document.createRange != "undefined") {
+        let range = document.createRange();
+        range.selectNodeContents(tarea);
+        range.collapse(false); // Colapsa al final del rango
+        let selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+    }
+
+    tarea.removeEventListener("keydown", manejarTeclas);
+    tarea.removeEventListener("blur", finalizarEdicion);
+
+    /* Haremos dos listeners, uno por si clickamos fuera del contenedor y otro por si le damos a enter */
+    tarea.addEventListener("keydown", manejarTeclas);
+    tarea.addEventListener("blur", finalizarEdicion);
+
+    /* Función para finalizar la edición */
+    function finalizarEdicion()
+    {
+        // Si lo dejamos vacío
+        if(tarea.textContent.trim() === "")
+        {
+            tarea.textContent = textoOriginal;
+        }
+
+        // Descartamos la edición
+        tarea.contentEditable = false;
+            
+        // Guardamos los datos
+        saveData();
+    }
+
+    /* Función para manejar las teclas */
+    function manejarTeclas (e)
+    {
+        if(e.key === "Enter")
+        {
+            e.preventDefault(); // Evitamos saltos de línea
+            finalizarEdicion();
+            if(nCambios >= 1000)
+            {
+                nCambios = 0;
+                location.reload();
+            }
+        }
+        else if(e.key === "Escape")
+        {
+            tarea.textContent = textoOriginal;
+            finalizarEdicion();
+        }
+        else if(e.key === "ArrowDown")  // Pasamos a la siguiente tarea (ctrl+Enter)
+        {
+            nCambios++;
+
+            // Evitamos comportamiento por defecto
+            e.preventDefault();
+            // Terminamos de editar la actual
+            finalizarEdicion();
+
+            // Buscamos la siguiente tarea
+            const contenedorActual = tarea.parentElement;
+            const siguienteContenedor = contenedorActual.nextElementSibling;
+
+            // Si hay una siguiente
+            if(siguienteContenedor)
+            {
+                // Accedemos a su campo de texto
+                const siguienteTarea = siguienteContenedor.querySelector("li");
+                    
+                // Si hay siguiente tarea, simulamos doble click
+                if(siguienteTarea)
+                {
+                    editarTareaSig(siguienteTarea);
+                    // Hacemos los mismos manejadores fuera de
+                }
+            }
+            // Si no hay una siguiente
+            else
+            {
+                tarea.focus;
+                editarTareaSig(tarea);
+            }
+        }
+        else if(e.key === "ArrowUp")  // Pasamos a la anterior tarea 
+        {
+            nCambios++;
+
+             // Evitamos comportamiento por defecto
+            e.preventDefault();
+            // Terminamos de editar la actual
+            finalizarEdicion();
+
+            // Buscamos la anterior tarea
+            const contenedorActual = tarea.parentElement;
+            const siguienteContenedor = contenedorActual.previousElementSibling;
+
+            // Si hay una siguiente
+            if(siguienteContenedor)
+            {
+                // Accedemos a su campo de texto
+                const siguienteTarea = siguienteContenedor.querySelector("li");
+                    
+                // Si hay siguiente tarea, simulamos doble click
+                if(siguienteTarea)
+                {
+                    editarTareaSig(siguienteTarea);
+                    // Hacemos los mismos manejadores fuera de
+                }
+            }
+            // Si no hay una siguiente
+            else
+            {
+                tarea.focus;
+                editarTareaSig(tarea);
+            }
+        }
+    } 
+
+}
