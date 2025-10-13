@@ -19,6 +19,7 @@
     </a>
     <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
     <img src="https://img.shields.io/static/v1?label=Zip%20Size&message=8KB&color=purple&style=flat-square" alt="Zip size"/>
+    </a>
 </p>
 
 Basic real-time Analog clock built with **HTML, CSS and JS** to improve my front-end development skills.

@@ -16,6 +16,7 @@
     </a>
     <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
     <img src="https://img.shields.io/static/v1?label=Zip%20Size&message=180KB&color=purple&style=flat-square" alt="Zip size"/>
+    </a>
 </p> 
 
 An animated profile card with dynamic text and glowing borders built using **HTML and CSS** to enhance my front-end development skills.

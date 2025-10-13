@@ -1,17 +1,40 @@
 # To Do List 📋
 
-Una lista de tareas básica, con funciones necesarias como:
+<p align="center">
+    <img src="assets/demo.gif" alt="Demo">
+</p>
 
-- Eliminar tareas
-- Modificar tareas
-- Tachar tareas
+<p align="center">
+    <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
+    <img src="https://img.shields.io/badge/HTML-5.2%25-orange?style=flat-square" alt="HTML"/>
+    </a>
+    <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
+    <img src="https://img.shields.io/badge/CSS-45.9%25-blue?style=flat-square" alt="CSS"/>
+    </a>
+    <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
+    <img src="https://img.shields.io/badge/JS-48.9%25-yellow?style=flat-square" alt="JS"/>
+    </a>
+    <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
+    <img src="https://img.shields.io/static/v1?label=Folder%20Size&message=904KB&color=green&style=flat-square" alt="Folder size"/>
+    </a>
+    <a href="https://github.com/Soviji13/Learn-FrontEnd-with-me">
+    <img src="https://img.shields.io/static/v1?label=Zip%20Size&message=9.4KB&color=purple&style=flat-square" alt="Zip size"/>
+    </a>
+</p>
 
-Hecha específicamente para aprender y sobretodo aprender para mis futuros proyectos.
+A to-do list, **with basic functions** such as:
 
-Hay ciertas cosas a implementar como el cambio de tema o poder cambiar de posición una tarea.
+- *Delete tasks*
+- *Edit tasks*
+- *Mark tasks as completed*
+- *Save all content in memory*
 
-> Los comentarios están en español y el código no está correctamente estructurado para una fácil comprensión
+Made specifically to learn and especially to learn for my future projects.
 
-Visita este [enlace]() para probarla!
+There are certain things to implement like theme change or the ability to change a task's position.
 
-Aquí tienes el [.zip] si quieres descargarlo.
+- Visit this [link](https://soviji13.github.io/Learn-FrontEnd-with-me/to-do-list/) to try it!
+
+- Here you have the [.zip](https://github.com/Soviji13/Learn-FrontEnd-with-me/raw/refs/heads/main/to-do-list/todoList.zip) if you want to download it.
+
+> 🇪🇸 Comments are in Spanish and the code is not properly structured for easy understanding
