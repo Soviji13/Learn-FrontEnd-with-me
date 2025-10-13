@@ -201,6 +201,11 @@ li
     -ms-user-select: none;
 }
 
+/* Quitar outline azul al editar */
+li[contenteditable="true"]
+{
+    outline: none;
+}
 
 /* Contenedor de contenedor de cada tarea */
 ul
