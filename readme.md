@@ -5,13 +5,13 @@ Welcome to my personal front-end learning repository!
 
 <p align="center">
     <a href="https://img.shields.io/badge/HTML-25.4%25-orange?style=flat-square&logo=html5">
-    <img src="https://img.shields.io/badge/HTML-25.4%25-orange?style=for-the-badge&logo=html5"/>
+    <img src="https://img.shields.io/badge/HTML-14.7%25-orange?style=for-the-badge&logo=html5"/>
     </a>
     <a href="https://img.shields.io/badge/CSS-55.6%25-blue?style=flat-square&logo=css3">
-    <img src="https://img.shields.io/badge/CSS-55.6%25-blue?style=for-the-badge&logo=css"/>
+    <img src="https://img.shields.io/badge/CSS-40.2%25-blue?style=for-the-badge&logo=css"/>
     </a>
-    <a href="https://img.shields.io/badge/JavaScript-19%25-yellow?style=flat-square&logo=javascript">
-    <img src="https://img.shields.io/badge/JavaScript-19%25-yellow?style=for-the-badge&logo=javascript"/>
+    <a href="https://img.shields.io/badge/JavaScript-45.1%25-yellow?style=flat-square&logo=javascript">
+    <img src="https://img.shields.io/badge/JavaScript-45.1%25-yellow?style=for-the-badge&logo=javascript"/>
     </a>
 </p> 
 
