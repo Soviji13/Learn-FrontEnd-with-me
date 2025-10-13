@@ -58,7 +58,14 @@ Each project is **well-documented** in its own folder with notes and explanation
 
 > More involved projects with deeper logic or more complex layout.
 
-_(Coming soon...)_
+- **[To do List](./to-do-list/) 📋**
+  Una To do List totalmente funcional, con las tareas básicas integradas.
+
+  Se esperan hacer próximas mejoras en un futuro.
+  
+  - Específicamente construida para aprender manejo de eventos con JavaScript
+
+  📦 [zip file]()
 
 ---
 
