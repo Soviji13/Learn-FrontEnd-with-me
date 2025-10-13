@@ -25,9 +25,17 @@
 A to-do list, **with basic functions** such as:
 
 - *Delete tasks*
-- *Edit tasks*
+- *Edit tasks* (Double-click on the task)
 - *Mark tasks as completed*
 - *Save all content in memory*
+
+Additionally, it has keyboard shortcuts such as:
+
+- Enter: To create tasks or confirm modification
+- Tab: In task edit mode, to leave it in its initial state
+- Up or down arrow: In task edit mode, to edit the next or previous
+
+
 
 Made specifically to learn and especially to learn for my future projects.
 
