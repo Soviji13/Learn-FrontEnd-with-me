@@ -40,7 +40,9 @@ Each project is **well-documented** in its own folder with notes and explanation
 - **[Analog Clock](./analog-clock) 🕒**
   A simple HTML/CSS/JS analog clock 
   
-  - Specifically built to learn Responsive Design  
+  - Specifically built to learn Responsive Design
+  - **Languages**: HTML, CSS, JS  
+  - **Difficulty**: 3/10
 
   📦 [zip file](https://github.com/Soviji13/Learn-FrontEnd-with-me/raw/refs/heads/main/analog-clock/analogClock.zip) 
 
@@ -48,6 +50,8 @@ Each project is **well-documented** in its own folder with notes and explanation
   An animated HTML/CSS profile card
   
   - Specifically built to learn animations
+  - **Languages**: HTML, CSS
+  - **Difficulty**: 2/10
 
   📦 [zip file](https://github.com/Soviji13/Learn-FrontEnd-with-me/raw/refs/heads/main/profile-card/profile-card.zip)
 
@@ -59,13 +63,15 @@ Each project is **well-documented** in its own folder with notes and explanation
 > More involved projects with deeper logic or more complex layout.
 
 - **[To do List](./to-do-list/) 📋**
-  A fully functional To-do List, with basic tasks integrated.
+  A fully functional To-do List with basic tasks integrated.
 
   Upcoming improvements are expected in the future.
   
   - Specifically built to learn event handling with JavaScript
+  - **Languages**: HTML, CSS, JS
+  - **Difficulty**: 5/10
 
-  📦 [zip file]()
+  📦 [zip file](https://github.com/Soviji13/Learn-FrontEnd-with-me/raw/refs/heads/main/to-do-list/todoList.zip)
 
 ---
 
