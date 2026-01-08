@@ -62,10 +62,8 @@ Each project is **well-documented** in its own folder with notes and explanation
 
 > More involved projects with deeper logic or more complex layout.
 
-- **[To do List](./to-do-list/) 📋**
-  A fully functional To-do List with basic tasks integrated.
-
-  Upcoming improvements are expected in the future.
+- **[To-Do List](./to-do-list/) 📋**
+  A fully functional To-do List with basic tasks integrated. Upcoming improvements are expected in the future.
   
   - Specifically built to learn event handling with JavaScript
   - **Languages**: HTML, CSS, JS
